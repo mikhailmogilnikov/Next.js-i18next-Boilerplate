@@ -6,6 +6,4 @@ export function LanguageProvider({ children, lang }) {
   return <LangContext.Provider value={lang}>{children}</LangContext.Provider>;
 }
 
-export const useLangContext = () => {
-  return useContext(LangContext);
-};
+export const useLangContext = () => useContext(LangContext);

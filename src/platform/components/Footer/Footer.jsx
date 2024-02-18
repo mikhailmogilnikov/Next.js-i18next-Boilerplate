@@ -4,7 +4,7 @@ import { languages } from '../../i18n/settings';
 import { useTranslation } from '../../i18n';
 
 export const Footer = async ({ lng }) => {
-  const { t } = await useTranslation(lng, 'layout/footer');
+  const { t } = await useTranslation(lng, 'platform/footer');
 
   return (
     <footer style={{ marginTop: 50 }}>
@@ -13,14 +13,12 @@ export const Footer = async ({ lng }) => {
       </Trans>
       {languages
         .filter((l) => lng !== l)
-        .map((l, index) => {
-          return (
-            <span key={l}>
-              {index > 0 && ' or '}
-              <Link href={`/${l}`}>{l}</Link>
-            </span>
-          );
-        })}
+        .map((l, index) => (
+          <span key={l}>
+            {index > 0 && ' or '}
+            <Link href={`/${l}`}>{l}</Link>
+          </span>
+        ))}
     </footer>
   );
 };
